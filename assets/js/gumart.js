@@ -67,5 +67,6 @@ function updateModal(id) {
         <li class="list-group-item border-0">${item.spots} <i class="fa-solid fa-car"></i></li>
         <li class="list-group-item border-0">${item.area} <i class="fa-solid fa-expand"></i></li>
     `
+    modalID.innerHTML = `ID: ${item.id}`
     modalDescription.innerHTML = item.description
 }

@@ -28,9 +28,9 @@ function loadItems(type) {
         itemsRow.innerHTML += `
             <div class="col">
                 <div class="card shadow-sm">
-                    <a class="stretched-link" href="#modal" data-bs-toggle="modal" onclick="updateModal('${item.id}')"><img src="${basedir}/${item.id}/1.jpg" alt="thumbnail" class="card-img-top"></a>
-                    <div class="card-body text-center pb-2">
-                        <h5 class="card-title my-0">${item.district}</h5>
+                    <a class="stretched-link" href="#modal" data-bs-toggle="modal" onclick="updateModal('${item.id}')"><img src="${basedir}/${item.id}/thumbnail.jpg" alt="thumbnail" class="card-img-top"></a>
+                    <div class="card-body text-center py-2">
+                        <h5 class="card-title my-1">${item.district}</h5>
                         <ul class="list-group list-group-horizontal justify-content-center card-subtitle fw-bold my-0">
                             <li class="list-group-item border-0">${item.bedrooms} <i class="fa-solid fa-bed"></i></li>
                             <li class="list-group-item border-0">${item.bathrooms} <i class="fa-solid fa-toilet"></i></li>

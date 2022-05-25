@@ -10,8 +10,8 @@
         <link href="/assets/css/fonts.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container-md my-5">
-            <h1 class="text-center display-5 my-5"><a class="text-decoration-none link-dark" href="/">Gumart Imóveis</a></h1>
+        <div class="container-md my-3">
+            <h1 class="text-center display-3 my-5"><a class="text-decoration-none link-dark" href="/">Gumart Imóveis</a></h1>
             <div class="mb-3">
                 <a class="text-decoration-none link-dark fs-5" href="#filterCollapse" data-bs-toggle="collapse">Filtrar <i class="fa-solid fa-filter"></i></a>
                 <div class="collapse mb-4" id="filterCollapse">
@@ -56,11 +56,11 @@
                                     <label for="areaInput">Área (m²)</label>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="btn-group w-100">
-                                    <button class="btn btn-outline-primary" id="rentButton" onclick="loadItems('rent')">Alugar</button>
-                                    <button class="btn btn-outline-primary" id="buyButton" onclick="loadItems('sell')">Comprar</button>
-                                </div>
+                            <div class="col-6">
+                                <button class="btn btn-outline-primary w-100" id="rentButton" onclick="loadItems('rent')">Alugar</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-outline-primary w-100" id="buyButton" onclick="loadItems('sell')">Comprar</button>
                             </div>
                         </div>
                     </div>

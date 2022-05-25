@@ -9,8 +9,8 @@
         <link href="/assets/css/fonts.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container-md my-5">
-            <h1 class="text-center display-5 my-5"><a class="text-decoration-none link-dark" href="/">Gumart Imóveis</a></h1>
+        <div class="container-md my-3">
+            <h1 class="text-center display-3 my-5"><a class="text-decoration-none link-dark" href="/">Gumart Imóveis</a></h1>
             <div class="row g-3 justify-content-center align-items-center">
                 <div class="col-6">
                     <label for="districtInput" class="form-label">Bairro</label>
@@ -48,11 +48,11 @@
                     <label for="picsInput" class="form-label">Fotos</label>
                     <input type="file" class="form-control" id="picsInput" multiple>
                 </div>
-                <div class="col-12">
-                    <div class="btn-group w-100">
-                        <button class="btn btn-outline-primary" onclick="download('rent')">Alugar</button>
-                        <button class="btn btn-outline-primary" onclick="download('sell')">Vender</button>
-                    </div>
+                <div class="col-6">
+                    <button class="btn btn-outline-primary w-100" onclick="download('rent')">Alugar</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-outline-primary w-100" onclick="download('sell')">Vender</button>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
         <script src="/assets/js/FileSaver.js"></script>
         <script>
             function download(type) {
-                const basedir = "/id"
+                const basedir = "id"
                 const zip = new JSZip()
                 const id = Date.now().toString(16)
                 zip.file(`${basedir}/${id}.json`, JSON.stringify({
@@ -73,11 +73,11 @@
                     spots: parseInt(spotsInput.value),
                     area: parseInt(areaInput.value),
                     description: descriptionText.value,
-                    pics: 1 + picsInput.files.length
+                    pics: picsInput.files.length
                 }))
-                zip.file(`${basedir}/${id}/1.jpg`, thumbnailInput.files[0], { base64: true })
+                zip.file(`${basedir}/${id}/thumbnail.jpg`, thumbnailInput.files[0], { base64: true })
                 for (let i = 0; i < picsInput.files.length; i++) {
-                    zip.file(`${basedir}/${id}/${i + 2}.jpg`, picsInput.files[i], { base64: true })
+                    zip.file(`${basedir}/${id}/${i + 1}.jpg`, picsInput.files[i], { base64: true })
                 }
                 zip.generateAsync({ type: "blob" }).then(content => {
                     saveAs(content, `${id}.zip`)

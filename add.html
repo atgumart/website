@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gumart Imóveis</title>
+        <link rel="icon" type="image/png" href="/assets/favicon.png">
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/fonts.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-md my-3">
+            <h1 class="text-center display-3 my-5"><a class="text-decoration-none link-dark" href="/">Gumart Imóveis</a></h1>
+            <form id="addForm" novalidate>
+                <div class="row g-3 align-items-center">
+                    <div class="col-6">
+                        <label for="locationInput" class="form-label">Localização</label>
+                        <input type="text" class="form-control" id="locationInput" list="locationDatalist" required>
+                        <datalist id="locationDatalist"></datalist>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <label for="priceInput" class="form-label">Valor</label>
+                        <input type="text" class="form-control" id="priceInput" required>
+                    </div>
+                    <div class="col-3 col-lg-1">
+                        <label for="bedroomsInput" class="form-label">Quartos</label>
+                        <input type="text" class="form-control" id="bedroomsInput" required>
+                    </div>
+                    <div class="col-3 col-lg-1">
+                        <label for="bathroomsInput" class="form-label">Banheiros</label>
+                        <input type="text" class="form-control" id="bathroomsInput" required>
+                    </div>
+                    <div class="col-3 col-lg-1">
+                        <label for="spotsInput" class="form-label">Vagas</label>
+                        <input type="text" class="form-control" id="spotsInput" required>
+                    </div>
+                    <div class="col-3 col-lg-1">
+                        <label for="areaInput" class="form-label">Área</label>
+                        <input type="text" class="form-control" id="areaInput" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="descriptionText" class="form-label">Descrição</label>
+                        <textarea class="form-control" id="descriptionText" rows="3" style="resize: none;" required></textarea>
+                    </div>
+                    <div class="col-6">
+                        <label for="thumbnailInput" class="form-label">Thumbnail</label>
+                        <input type="file" class="form-control" id="thumbnailInput" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="picsInput" class="form-label">Fotos</label>
+                        <input type="file" class="form-control" id="picsInput" multiple required>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary w-100" id="rentButton" value="rent">Alugar</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-primary w-100" id="sellButton" value="sell">Vender</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="/assets/js/imask.js"></script>
+        <script src="/assets/js/jszip.js"></script>
+        <script src="/assets/js/FileSaver.js"></script>
+        <script src="/assets/js/add.js"></script>
+    </body>
+</html>

@@ -60,7 +60,8 @@ function genZip(action) {
         spots: parseInt(spotsInput.value),
         area: parseInt(areaMask.unmaskedValue),
         description: descriptionText.value,
-        pics: picsInput.files.length
+        pics: picsInput.files.length,
+        video: videoInput.value
     }))
     zip.file(`${basedir}/${id}/thumbnail.jpg`, thumbnailInput.files[0], { base64: true })
     for (let i = 0; i < picsInput.files.length; i++) {

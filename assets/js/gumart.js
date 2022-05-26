@@ -64,6 +64,13 @@ function updateModal(id) {
             </div>
         `
     }
+    if (item.video) {
+        modalCarousel.innerHTML += `
+        <div class="carousel-item">
+            <iframe class="d-block w-100" onload="adjustVideoHeight(this)" src="https://www.youtube-nocookie.com/embed/${item.video}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        `
+    }
 
     modalLocation.innerHTML = `<i class="fa-solid fa-location-dot text-danger"></i> ${item.location}`
     modalPrice.innerHTML = `${(item.action == "rent") ? "Alugar" : "Comprar"} por <span class="fw-bold">${item.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>`
@@ -75,4 +82,8 @@ function updateModal(id) {
     `
     modalID.innerHTML = `ID: ${item.id}`
     modalDescription.innerHTML = item.description
+}
+
+function adjustVideoHeight(element) {
+    element.height = element.parentElement.parentElement.firstElementChild.firstElementChild.height
 }
